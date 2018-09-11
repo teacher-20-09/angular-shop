@@ -1,0 +1,40 @@
+<button class='btn btn-info' ng-click="ShowProducts()">Товари</button>
+<table class="table table-bordered table-strizerd">
+	<tr>
+		<td>назва товару</td>
+		<td> кількість товару</td>
+		<td>ціна</td>
+		<td>видалити</td>
+	</tr>
+	<tr ng-repeat='item in cart'>
+	<td>{{item.name}} {{item.model}}</td>
+	<td><button class="btn btn-success" ng-click="plusCount(item) ">+</button>
+		{{item.newcount}}
+		<button class="btn btn-success" ng-click="minusCount(item)">-</button>
+	</td>
+	<td>{{item.newprice}}</td>
+	<td><button class="btn btn-danger" ng-click="deleteProductCart(item)">Видалити</button></td>	
+	</tr>
+</table>
+<div>Загальна Сума: {{sumTotal()}} грн</div>
+
+<div class='row'>
+	<form ng-model='novalidate' name="myform" 
+	class='col-sm-6 offset-sm-3 bg-success text-white'>
+	<div class="form-group">
+	
+	<label for="name">Name</label>
+	<input class="form-control" type="text" name="name" required ng-model="neworder.name"
+	value="{{fuser.name}}">
+	
+	<label for="phone">Phone</label>
+	<input class="form-control" type="text" name="model" required ng-model="neworder.phone">
+	
+	<label for="Price1">Email</label>
+	<input class="form-control" type="text" name="price" required ng-model="neworder.email">
+	</form>
+	<button class='col-sm-4 offset-sm-4 btn mt-3' ng-click='sendOrder(neworder)'>
+	Оформити замовлення
+</button>
+</div>
+

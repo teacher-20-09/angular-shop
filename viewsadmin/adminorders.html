@@ -1,0 +1,24 @@
+<div ng-repeat='item in orders'>
+<div class='d-flex justify-content-between'>	
+	<div>{{$index+1}}</div>
+	<div>{{item.name}}</div>
+	<div>{{item.phone}}</div>
+	<div>{{item.email}}</div>
+	<div>{{item.total}}</div>
+	<div><button class='btn btn-danger'>
+		<i class="far fa-times-circle"></i>
+		Close
+	</button>
+	</div>
+</div>
+	<table class='table table-bordered table-striped'>
+		<tr ng-repeat='subitem in item.cart'>
+			<td><i class="fab fa-elementor"></i></td>
+		    <td>{{subitem.name}}</td>
+		    <td>{{subitem.model}}</td>
+		    <td>{{subitem.category}}</td>
+		    <td>{{subitem.newcount}}</td>
+		    <td>{{subitem.newprice}}</td>
+		</tr>
+	</table>
+</div>
